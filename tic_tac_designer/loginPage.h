@@ -10,7 +10,6 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
-
 class loginPage : public QWidget
 {
 
