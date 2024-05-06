@@ -1,0 +1,29 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>key.png</file>
+    <file>new.png</file>
+    <file>1_player.png</file>
+    <file>2_players.png</file>
+    <file>history_background.png</file>
+    <file>about_background.png</file>
+    <file>12.png</file>
+    <file>need_to_sign.png</file>
+    <file>about-us.png</file>
+    <file>about-us_off.png</file>
+    <file>closed_eye.png</file>
+    <file>exit.png</file>
+    <file>exit_off.png</file>
+    <file>game-logo.png</file>
+    <file>history.png</file>
+    <file>history_off.png</file>
+    <file>home.png</file>
+    <file>home_off.png</file>
+    <file>instructions.png</file>
+    <file>instructions_off.png</file>
+    <file>open_eye.png</file>
+    <file>recoutces.qrc</file>
+    <file>sign-in.png</file>
+    <file>sign-in_off.png</file>
+    <file>welcome.png</file>
+  </qresource>
+</RCC>
