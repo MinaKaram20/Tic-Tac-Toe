@@ -1,20 +1,22 @@
-test.sh
-#!/bin/bash
+#!/usr/bin/bash -e
 
-# Exit immediately if a command exits with a non-zero status
+# Set shell options
 set -e
+set -o pipefail
 
-# Print each command before executing it (useful for debugging)
-set -x
+# Define source directory
+SRC_DIR="/home/runner/work/Tic-Tac-Toe/Tic-Tac-Toe"
 
-# Create a build directory and navigate into it
-mkdir -p build
-cd build
+# Check if the source directory exists
+if [ ! -d "$SRC_DIR" ]; then
+  echo "The source directory \"$SRC_DIR\" does not exist."
+  exit 1
+fi
 
-# Run CMake to configure the project
-cmake ..
+# Run CMake
+cmake "$SRC_DIR"
 
-# Build the project using make
+# Build the project
 make
 
 # Run tests
