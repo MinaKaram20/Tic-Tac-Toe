@@ -4,7 +4,7 @@
 int main()
 {
     int w;
-    scanf("%i",&w);
+    scanf("%i",&w)
     w = w/2;
     if (w%2 ==0)
         printf("YES");
