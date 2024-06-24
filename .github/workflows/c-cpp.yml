@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2  # Updated to v2 for checkout action
+
+    - name: Set up build environment
+      run: sudo apt-get install -y build-essential cmake
+
+    - name: Make build script executable
+      run: chmod +x path/to/your/test.sh
+
+    - name: Run build script
+      run: ./path/to/your/test.sh
