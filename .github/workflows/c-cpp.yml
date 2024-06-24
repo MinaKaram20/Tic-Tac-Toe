@@ -1,23 +1,29 @@
-name: C/C++ CI
+name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  # Use v2 for checkout action
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-    - name: Set up build environment
-      run: sudo apt-get install -y build-essential cmake
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'  
 
-    - name: Make build script executable
-      run: chmod +x ./test.sh
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y cmake make g++  # Install necessary tools
 
-    - name: Run build script
-      run: ./test.sh
+    - name: Run build and test script
+      run: python test.py
