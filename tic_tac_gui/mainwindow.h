@@ -7,6 +7,7 @@
 #include <QFileInfo>
 
 #include "global_functions.h"
+#include "tictactoe.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -23,6 +24,7 @@ public:
     ~MainWindow();
 
     static void updateUIifSigned(); //A function to update UI when sign-in or up
+    QSqlDatabase mydb;
 
 private slots:
     void on_exitButton_clicked();
@@ -43,7 +45,23 @@ private slots:
 
     void on_sign_pushButton_clicked();
 
+    void on_tictactoeButton_clicked();
+
+    void on_tictactoeVsComputerButton_clicked();
+
+    void handleGameClose();
+
+    void updateGameHistory();
+
+    void on_threeXsButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    TicTacToe *tictactoeGame;
+    TicTacToe *tictactoe;
+    void initializeBoard();
+    void switchMode();
+    void clearOldestMove();
+
 };
 #endif // MAINWINDOW_H

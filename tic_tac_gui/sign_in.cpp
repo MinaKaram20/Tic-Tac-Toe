@@ -5,28 +5,32 @@
 #include "sign_up.h"
 #include "mainwindow.h"
 #include "player.h"
+#include "globals.h"
 
 extern player* plyr;
 
 sign_in::sign_in(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::sign_in)
+      QDialog(parent),
+      ui(new Ui::sign_in)
 {
     ui->setupUi(this);
     setWindowTitle("Sign in");
 
     mydb= QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/DAVID SAMEEH/Desktop/tic tac toe/tic_tac_gui/tic_tac_designer/database/test.db");
+    mydb.setDatabaseName(DataBase_path);
 
     if(!mydb.open())
         ui->lineEdit_error_message->setText("Failed to open the database.");
     else
         ui->lineEdit_error_message->setText("Connected....");
+
 }
 
 sign_in::~sign_in()
 {
     delete ui;
+    qDebug() << " database";
+
 }
 
 
@@ -89,6 +93,7 @@ void sign_in::on_pushButton_sign_in_clicked()
 
     if(myqry.exec("select * from Data where username='"+username+"' and PASSWORD='"+password+"'"))
     {
+        user=username;
         int count=0;
         while (myqry.next())
         {
@@ -98,11 +103,11 @@ void sign_in::on_pushButton_sign_in_clicked()
         if (count==1)
         {
             if (ui->sub_gridLayout->layout())
-            clearLayout(ui->sub_gridLayout->layout());
+                clearLayout(ui->sub_gridLayout->layout());
             if (ui->sub_horizontalLayout->layout())
-            clearLayout(ui->sub_horizontalLayout->layout());
+                clearLayout(ui->sub_horizontalLayout->layout());
             if (ui->main_gridLayout->layout())
-            clearLayout(ui->main_gridLayout->layout());
+                clearLayout(ui->main_gridLayout->layout());
 
             plyr->signIn(username.toStdString(), password.toStdString());  // Sign into the player for the GUI
             MainWindow::updateUIifSigned();

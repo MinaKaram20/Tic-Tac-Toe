@@ -266,7 +266,7 @@ color: rgb(255, 255, 255);</string>
      <number>1</number>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QLabel" name="background_2">
@@ -433,12 +433,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Try signing in to get your personal play history&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QListWidget" name="X_O_listWidget">
+     <widget class="QListWidget" name="X_O_listWidget_2">
       <property name="geometry">
        <rect>
-        <x>74</x>
-        <y>443</y>
-        <width>151</width>
+        <x>150</x>
+        <y>450</y>
+        <width>71</width>
         <height>71</height>
        </rect>
       </property>
@@ -490,165 +490,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="viewMode">
        <enum>QListView::IconMode</enum>
       </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
-       <property name="background">
-        <brush brushstyle="NoBrush">
-         <color alpha="100">
-          <red>132</red>
-          <green>207</green>
-          <blue>212</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="foreground">
-        <brush brushstyle="NoBrush">
-         <color alpha="200">
-          <red>0</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="icon">
-        <iconset resource="icons/recoutces.qrc">
-         <normaloff>:/icons/1_player.png</normaloff>:/icons/1_player.png</iconset>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="font">
-        <font>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
-       <property name="background">
-        <brush brushstyle="NoBrush">
-         <color alpha="100">
-          <red>132</red>
-          <green>207</green>
-          <blue>212</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="foreground">
-        <brush brushstyle="NoBrush">
-         <color alpha="200">
-          <red>0</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="icon">
-        <iconset resource="icons/recoutces.qrc">
-         <normaloff>:/icons/2_players.png</normaloff>:/icons/2_players.png</iconset>
-       </property>
-      </item>
-     </widget>
-     <widget class="QListWidget" name="three_Xs_listWidget">
-      <property name="geometry">
-       <rect>
-        <x>402</x>
-        <y>443</y>
-        <width>151</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-      <property name="midLineWidth">
-       <number>0</number>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="tabKeyNavigation">
-       <bool>true</bool>
-      </property>
-      <property name="selectionMode">
-       <enum>QAbstractItemView::NoSelection</enum>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>60</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="flow">
-       <enum>QListView::TopToBottom</enum>
-      </property>
-      <property name="isWrapping" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="spacing">
-       <number>7</number>
-      </property>
-      <property name="viewMode">
-       <enum>QListView::IconMode</enum>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
-       <property name="background">
-        <brush brushstyle="NoBrush">
-         <color alpha="100">
-          <red>132</red>
-          <green>207</green>
-          <blue>212</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="foreground">
-        <brush brushstyle="NoBrush">
-         <color alpha="200">
-          <red>0</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="icon">
-        <iconset resource="icons/recoutces.qrc">
-         <normaloff>:/icons/1_player.png</normaloff>:/icons/1_player.png</iconset>
-       </property>
-      </item>
       <item>
        <property name="text">
         <string/>
@@ -757,16 +598,152 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="tictactoeButton">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>480</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tictactoeVsComputerButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>480</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="X_O_listWidget">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>450</y>
+        <width>81</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="flow">
+       <enum>QListView::TopToBottom</enum>
+      </property>
+      <property name="isWrapping" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="spacing">
+       <number>7</number>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::IconMode</enum>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <fontweight>DemiBold</fontweight>
+        </font>
+       </property>
+       <property name="background">
+        <brush brushstyle="NoBrush">
+         <color alpha="100">
+          <red>132</red>
+          <green>207</green>
+          <blue>212</blue>
+         </color>
+        </brush>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="200">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
+       <property name="icon">
+        <iconset resource="icons/recoutces.qrc">
+         <normaloff>:/icons/1_player.png</normaloff>:/icons/1_player.png</iconset>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="threeXsButton">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>440</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
      <zorder>slogan</zorder>
      <zorder>background_2</zorder>
      <zorder>X_O_pushButton</zorder>
      <zorder>three_Xs_pushButton</zorder>
      <zorder>HI_message</zorder>
-     <zorder>X_O_listWidget</zorder>
-     <zorder>three_Xs_listWidget</zorder>
+     <zorder>X_O_listWidget_2</zorder>
      <zorder>sign_pushButton</zorder>
      <zorder>lineEdit</zorder>
      <zorder>welcome_icon</zorder>
+     <zorder>tictactoeButton</zorder>
+     <zorder>tictactoeVsComputerButton</zorder>
+     <zorder>X_O_listWidget</zorder>
+     <zorder>threeXsButton</zorder>
     </widget>
     <widget class="QWidget" name="signPage">
      <widget class="QLabel" name="label_3">
@@ -915,7 +892,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLabel" name="background">
       <property name="geometry">
        <rect>
-        <x>-120</x>
+        <x>-160</x>
         <y>0</y>
         <width>811</width>
         <height>621</height>
@@ -929,6 +906,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="gameHistoryTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>371</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 0);
+</string>
       </property>
      </widget>
     </widget>
@@ -1000,7 +991,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <connection>
    <sender>X_O_pushButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>X_O_listWidget</receiver>
+   <receiver>X_O_listWidget_2</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1014,18 +1005,66 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>three_Xs_pushButton</sender>
+   <sender>X_O_listWidget_2</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>tictactoeButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>387</x>
+     <y>467</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>279</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>X_O_listWidget</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>tictactoeVsComputerButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>490</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>369</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>X_O_pushButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>three_Xs_listWidget</receiver>
+   <receiver>X_O_listWidget</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>644</x>
-     <y>347</y>
+     <x>241</x>
+     <y>366</y>
     </hint>
     <hint type="destinationlabel">
-     <x>682</x>
+     <x>243</x>
      <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>three_Xs_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>threeXsButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>582</x>
+     <y>398</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>605</x>
+     <y>464</y>
     </hint>
    </hints>
   </connection>

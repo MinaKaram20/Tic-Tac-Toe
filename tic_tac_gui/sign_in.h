@@ -28,6 +28,7 @@ public:
     explicit sign_in(QWidget *parent = nullptr);
     ~sign_in();
 
+
 private slots:
     void on_pushButton_cancel_clicked();
 
@@ -36,6 +37,7 @@ private slots:
     void on_Button_hid_sho_clicked();
 
     void on_toggel_access_pushButton_clicked();
+
 
 private:
     Ui::sign_in *ui;

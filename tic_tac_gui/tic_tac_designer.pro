@@ -14,14 +14,19 @@ SOURCES += \
     mainwindow.cpp \
     player.cpp \
     sign_in.cpp \
-    sign_up.cpp
+    sign_up.cpp \
+    tictactoe.cpp \
+    winnerwidget.cpp
 
 HEADERS += \
     global_functions.h \
+    globals.h \
     mainwindow.h \
     player.h \
     sign_in.h \
-    sign_up.h
+    sign_up.h \
+    tictactoe.h \
+    winnerwidget.h
 
 FORMS += \
     mainwindow.ui \

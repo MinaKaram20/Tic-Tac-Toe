@@ -5,18 +5,20 @@
 #include "global_functions.h"
 #include "mainwindow.h"
 #include "player.h"
+//#include "globals.h"
 
+extern QString DataBase_path;
 extern player* plyr;
 
 sign_up::sign_up(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::sign_up)
+      , ui(new Ui::sign_up)
 {
     ui->setupUi(this);
     setWindowTitle("Create new account");
 
     mydb= QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/DAVID SAMEEH/Desktop/tic tac toe/tic_tac_gui/tic_tac_designer/database/test.db");
+    mydb.setDatabaseName(DataBase_path);
 
     if(!mydb.open())
         ui->lineEdit_error_message->setText("Failed to open the database");
@@ -27,6 +29,7 @@ sign_up::sign_up(QWidget *parent)
 sign_up::~sign_up()
 {
     delete ui;
+
 }
 
 
@@ -101,7 +104,7 @@ void sign_up::on_pushButton_sign_up_clicked()
     }
 
     QSqlQuery myqry;
-    myqry.prepare("INSERT INTO Data (username, PASSWORD) VALUES (:username, :password)");
+    myqry.prepare("INSERT INTO data (username, PASSWORD) VALUES (:username, :password)");
     myqry.bindValue(":username", username);
     myqry.bindValue(":password", password);
 
@@ -109,7 +112,7 @@ void sign_up::on_pushButton_sign_up_clicked()
     {
         if (ui->sub_gridLayout->layout())
             clearLayout(ui->sub_gridLayout->layout());
-         if (ui->sub_horizontalLayout->layout())
+        if (ui->sub_horizontalLayout->layout())
             clearLayout(ui->sub_horizontalLayout->layout());
         if (ui->main_gridLayout->layout())
             clearLayout(ui->main_gridLayout->layout());
@@ -120,8 +123,9 @@ void sign_up::on_pushButton_sign_up_clicked()
         Delay_ND_CLose(this);
 
         ui->lineEdit_error_message->setText("Account created successfully.");
-        ui->lineEdit_error_message->setStyleSheet("background-color: rgb(240, 240, 240);    color: green;   font-size: 20px;");
+        ui->lineEdit_error_message->setStyleSheet("background-color: rgb(240, 240, 240); color: green; font-size: 20px;");
         ui->lineEdit_error_message->setAlignment(Qt::AlignHCenter); // Align the text horizontally to the center
+
 
     }
     else {
@@ -129,7 +133,7 @@ void sign_up::on_pushButton_sign_up_clicked()
         if(myqry.lastError().text().contains("UNIQUE constraint failed")) {
             ui->lineEdit_error_message->setText("Username already exists. Please choose another one.");
         } else {
-            ui->lineEdit_error_message->setText("Failed to create account.");
+            ui->lineEdit_error_message->setText("Failed to create account: " + myqry.lastError().text());
         }
     }
 }

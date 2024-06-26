@@ -1,6 +1,7 @@
 #ifndef SIGN_UP_H
 #define SIGN_UP_H
 
+
 #include <QDialog>
 #include <QtSql>
 #include <QDebug>
