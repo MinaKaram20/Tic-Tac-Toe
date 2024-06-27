@@ -496,7 +496,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="font">
         <font>
-         <fontweight>DemiBold</fontweight>
+         <weight>DemiBold</weight>
         </font>
        </property>
        <property name="background">
@@ -694,7 +694,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="font">
         <font>
          <pointsize>11</pointsize>
-         <fontweight>DemiBold</fontweight>
+         <weight>DemiBold</weight>
         </font>
        </property>
        <property name="background">
