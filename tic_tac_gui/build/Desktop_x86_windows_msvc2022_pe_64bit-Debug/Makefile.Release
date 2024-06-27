@@ -19,7 +19,7 @@ CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStri
 INCPATH       = -I..\..\..\tic_tac_gui -I. -ID:\Qt\6.6.3\msvc2019_64\include -ID:\Qt\6.6.3\msvc2019_64\include\QtWidgets -ID:\Qt\6.6.3\msvc2019_64\include\QtGui -ID:\Qt\6.6.3\msvc2019_64\include\QtSql -ID:\Qt\6.6.3\msvc2019_64\include\QtCore -Irelease -I. -I/include -ID:\Qt\6.6.3\msvc2019_64\mkspecs\win32-msvc 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /OPT:REF /OPT:ICF /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = D:\Qt\6.6.3\msvc2019_64\lib\Qt6Widgets.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Gui.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Sql.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Core.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6EntryPoint.lib shell32.lib  
+LIBS          = D:\Qt\6.6.3\msvc2019_64\lib\Qt6Widgets.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Gui.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Sql.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Core.lib release\tic_tac_designer_resource.res D:\Qt\6.6.3\msvc2019_64\lib\Qt6EntryPoint.lib shell32.lib  
 QMAKE         = D:\Qt\6.6.3\msvc2019_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -40,7 +40,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = release\tic_tac_designer_resource.res
 SED           = $(QMAKE) -install sed
 MOVE          = move
 
@@ -167,11 +167,14 @@ DESTDIR_TARGET = release\tic_tac_designer.exe
 first: all
 all: Makefile.Release  release\tic_tac_designer.exe
 
-release\tic_tac_designer.exe: D:\Qt\6.6.3\msvc2019_64\lib\Qt6Widgets.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Gui.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Sql.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Core.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6EntryPoint.lib ui_mainwindow.h ui_sign_in.h ui_sign_up.h $(OBJECTS) 
+release\tic_tac_designer.exe: D:\Qt\6.6.3\msvc2019_64\lib\Qt6Widgets.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Gui.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Sql.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6Core.lib D:\Qt\6.6.3\msvc2019_64\lib\Qt6EntryPoint.lib ui_mainwindow.h ui_sign_in.h ui_sign_up.h $(OBJECTS) release\tic_tac_designer_resource.res
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
 release\global_fincyions.obj release\main.obj release\mainwindow.obj release\player.obj release\sign_in.obj release\sign_up.obj release\tictactoe.obj release\winnerwidget.obj release\qrc_recoutces.obj release\moc_mainwindow.obj release\moc_sign_in.obj release\moc_sign_up.obj release\moc_tictactoe.obj release\moc_winnerwidget.obj
 $(LIBS)
 <<
+
+release\tic_tac_designer_resource.res: tic_tac_designer_resource.rc
+	rc /NOLOGO $(DEFINES) -fo release\tic_tac_designer_resource.res tic_tac_designer_resource.rc
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Release ..\..\tic_tac_designer.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -183,6 +186,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\global_fincyions.obj release\main.obj release\mainwindow.obj release\player.obj release\sign_in.obj release\sign_up.obj release\tictactoe.obj release\winnerwidget.obj release\qrc_recoutces.obj release\moc_mainwindow.obj release\moc_sign_in.obj release\moc_sign_up.obj release\moc_tictactoe.obj release\moc_winnerwidget.obj
+	-$(DEL_FILE) release\tic_tac_designer_resource.res
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -210,6 +214,7 @@ release\qrc_recoutces.cpp: ..\..\icons\recoutces.qrc \
 		..\..\icons\new.png \
 		..\..\icons\about-us_off.png \
 		..\..\icons\sign-in.png \
+		..\..\icons\game-logo.ico \
 		..\..\icons\about-us.png \
 		..\..\icons\exit.png \
 		..\..\icons\home_off.png \

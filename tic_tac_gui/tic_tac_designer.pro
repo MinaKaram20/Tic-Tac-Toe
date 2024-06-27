@@ -8,6 +8,9 @@ CONFIG += c++17
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+# Specify the icon file for your application
+RC_ICONS += $$PWD/icons/game-logo.ico
+
 SOURCES += \
     global_fincyions.cpp \
     main.cpp \
