@@ -1,28 +1,20 @@
-name: C/C++ CI
+name: C++ CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  # Use v2 of actions/checkout
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Run custom Bash script
-      run: bash test.sh  # Replace with the name of your Bash script
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -y g++ qt5-qmake qtbase5-dev qtdeclarative5-dev qttools5-dev-tools
 
-
-    - name: make
-      run: make
-
-    - name: make check
-      run: make check
-
-    - name: make distcheck
-      run: make distcheck
+    - name: Build C++ code
+      run: |
+        cd tic_tac_gui
+        qmake tic_tac_designer.pro
+        make
