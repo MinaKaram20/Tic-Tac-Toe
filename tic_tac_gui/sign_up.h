@@ -36,6 +36,9 @@ private slots:
 
     void on_Button_toggel_confirm_clicked();
 
+        signals:
+    void signedUP();
+
 private:
     Ui::sign_up *ui;
     QSqlDatabase mydb;

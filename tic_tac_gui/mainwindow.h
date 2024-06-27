@@ -23,8 +23,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    static void updateUIifSigned(); //A function to update UI when sign-in or up
+    //static  //A function to update UI when sign-in or up
     QSqlDatabase mydb;
+
+public slots:
+    void update_AndGoTo_Home_After_Signed();
+    void update_AndGoTo_History_After_Signed();
 
 private slots:
     void on_exitButton_clicked();
@@ -54,6 +58,8 @@ private slots:
     void updateGameHistory();
 
     void on_threeXsButton_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;

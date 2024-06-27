@@ -33,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
+    setWindowTitle("Tic Tac Tooooo");
+    setFixedSize(800, 611);
     ui->stackedWidget->setCurrentIndex(0); // initialize the main page to be the home page
     ui->X_O_listWidget_2->hide();
     ui->X_O_listWidget->hide();
@@ -80,9 +82,14 @@ MainWindow::~MainWindow()
     delete tictactoeGame;
 }
 
-void MainWindow::updateUIifSigned()
+void MainWindow::update_AndGoTo_Home_After_Signed()
 {
-  // ui->stackedWidget->setCurrentIndex(2);
+    ui->homeButton->click();
+}
+
+void MainWindow::update_AndGoTo_History_After_Signed()
+{
+    ui->historyButton->click();
 }
 
 void MainWindow::on_homeButton_clicked()
@@ -91,7 +98,7 @@ void MainWindow::on_homeButton_clicked()
     if (plyr->isSigned())
     {
         ui->HI_message->setText(QString::fromStdString(plyr->getUsername()));
-        ui->HI_message->setStyleSheet("color: gray; font-size: 13px;");
+        ui->HI_message->setStyleSheet("color: gray; font-size: 17px;");
         ui->HI_message->setFont(QFont(ui->HI_message->font().family(), -1, QFont::Bold));
         ui->HI_message->setAlignment(Qt::AlignLeft);
 
@@ -129,9 +136,18 @@ void MainWindow::on_aboutButton_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+void MainWindow::on_sign_pushButton_clicked()
+{
+    sign_in SignInWindow;
+    connect(&SignInWindow, &sign_in::signedIn, this, &MainWindow::update_AndGoTo_Home_After_Signed);
+    SignInWindow.setModal(true);
+    SignInWindow.exec();
+}
+
 void MainWindow::on_sign_in_clicked()
 {
     sign_in SignInWindow;
+    connect(&SignInWindow, &sign_in::signedIn, this, &MainWindow::update_AndGoTo_History_After_Signed);
     SignInWindow.setModal(true);
     SignInWindow.exec();
 }
@@ -139,6 +155,7 @@ void MainWindow::on_sign_in_clicked()
 void MainWindow::on_sign_up_clicked()
 {
     sign_up SignUpWindow;
+    connect(&SignUpWindow, &sign_up::signedUP, this, &MainWindow::update_AndGoTo_Home_After_Signed);
     SignUpWindow.setModal(true);
     SignUpWindow.exec();
 }
@@ -162,13 +179,6 @@ void MainWindow::on_three_Xs_pushButton_clicked()
         ui->three_Xs_pushButton->setStyleSheet(three_Xs_Clecked_style);
     else
         ui->three_Xs_pushButton->setStyleSheet(unClecked_style);
-}
-
-void MainWindow::on_sign_pushButton_clicked()
-{
-    sign_in SignInWindow;
-    SignInWindow.setModal(true);
-    SignInWindow.exec();
 }
 
 void MainWindow::on_tictactoeButton_clicked()

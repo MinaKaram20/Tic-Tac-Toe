@@ -38,6 +38,8 @@ private slots:
 
     void on_toggel_access_pushButton_clicked();
 
+        signals:
+    void signedIn();
 
 private:
     Ui::sign_in *ui;

@@ -3,7 +3,6 @@
 
 #include "global_functions.h"
 #include "sign_up.h"
-#include "mainwindow.h"
 #include "player.h"
 #include "globals.h"
 
@@ -110,7 +109,7 @@ void sign_in::on_pushButton_sign_in_clicked()
                 clearLayout(ui->main_gridLayout->layout());
 
             plyr->signIn(username.toStdString(), password.toStdString());  // Sign into the player for the GUI
-            MainWindow::updateUIifSigned();
+            emit signedIn(); // to update UI after Signing
 
             Delay_ND_CLose(this);
 
